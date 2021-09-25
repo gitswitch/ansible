@@ -1,0 +1,12 @@
+- hosts: web
+  remote_user: root
+  become: yes
+  tasks:
+  - name: Curl AWS
+    shell:
+      cmd: curl http://checkip.amazonaws.com
+    args:
+      executable: /bin/bash
+    register: curl
+  - debug: var=curl.stdout_lines
+
