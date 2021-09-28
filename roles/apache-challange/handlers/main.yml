@@ -1,0 +1,7 @@
+---
+# handlers file for apache-challange
+
+- name: Reload Apache
+  service:
+    name: httpd
+    state: started

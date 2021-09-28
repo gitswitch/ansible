@@ -1,0 +1,6 @@
+---
+# handlers file for mysql-challange
+- name: Start DB
+  service: 
+    name: "{{ db_server }}"
+    state: started

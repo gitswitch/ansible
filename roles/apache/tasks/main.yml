@@ -1,0 +1,28 @@
+---
+# tasks file for apache
+
+  - name: update all packages
+    yum:
+      name: '*'
+      state: latest
+
+  - name: Install Apache
+    yum: 
+      name: httpd
+      state: present
+
+  - name: Hello World
+    shell:
+      cmd: echo "hello world" > /var/www/html/index.html
+    args:
+      executable: /bin/bash
+    notify:
+      - Reload Apache     
+
+  - name: Curl AWS
+    shell:
+      cmd: curl http://checkip.amazonaws.com
+    args:
+      executable: /bin/bash
+    register: curl
+  - debug: var=curl.stdout_lines

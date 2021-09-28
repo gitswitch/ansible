@@ -1,0 +1,3 @@
+---
+# defaults file for mysql-challange
+db_server: mariadb

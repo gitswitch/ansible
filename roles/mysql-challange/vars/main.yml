@@ -1,0 +1,3 @@
+---
+# vars file for mysql-challange
+db_server: mysql
